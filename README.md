@@ -47,7 +47,7 @@ cd dvdrental-guide
 
 ### 补充学习资源
 - 阅读 [DVD租赁数据库详细结构说明.md](./DVD租赁数据库详细结构说明.md) 了解完整的数据库结构
-- 查看 [DVD租赁数据库关系图.md](./DVD租赁数据库关系图.md) 理解表之间的关系
+- 查看 [DVD租赁数据库ER关系图.md](https://neon.com/_next/image?url=%2Fpostgresqltutorial%2Fdvd-rental-sample-database-diagram.png&w=640&q=75&dpl=dpl_EGWN7rHAPyoeARBxeB8mRi69u7b2) 理解表之间的关系
 - 参考 [Ai-prompt.md](./Ai-prompt.md) 获取AI辅助学习的提示词
 
 ## 主要特性
