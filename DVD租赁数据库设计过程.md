@@ -654,7 +654,7 @@ graph TB
     
     subgraph "主键实现"
         K1[单列主键：film_id, customer_id]
-        K2[复合主键：film_actor(actor_id, film_id)]
+        K2["复合主键：film_actor(actor_id, film_id)"]
         K3[自增主键：使用SERIAL类型]
     end
     
@@ -703,13 +703,13 @@ graph TB
     end
     
     subgraph "文本类型"
-        T4[VARCHAR(n)：变长字符串<br/>first_name(45), last_name(45), title(255)]
-        T5[CHAR(n)：定长字符串<br/>language.name(20)]
+        T4["VARCHAR(n)：变长字符串<br/>first_name(45), last_name(45), title(255)"]
+        T5["CHAR(n)：定长字符串<br/>language.name(20)"]
         T6[TEXT：长文本<br/>film.description, address.address]
     end
     
     subgraph "数值类型"
-        T7[NUMERIC(p,s)：精确数值<br/>rental_rate(4,2), amount(5,2)]
+        T7["NUMERIC(p,s)：精确数值<br/>rental_rate(4,2), amount(5,2)"]
         T8[INTEGER：整数<br/>release_year, length, rental_duration]
         T9[BOOLEAN：布尔值<br/>activebool, active]
     end
@@ -723,7 +723,7 @@ graph TB
     subgraph "特殊类型"
         T13[BYTEA：二进制数据<br/>staff.picture]
         T14[TEXT[]：数组类型<br/>film.special_features]
-        T15[MPAA_RATING：枚举类型<br/>film.rating (G,PG,PG-13,R,NC-17)]
+        T15["MPAA_RATING：枚举类型<br/>film.rating (G,PG,PG-13,R,NC-17)"]
     end
 ```
 
@@ -733,11 +733,11 @@ graph TB
 graph TB
     subgraph "客户表 (Customer)"
         C1[customer_id: INTEGER PRIMARY KEY]
-        C2[store_id: SMALLINT REFERENCES store(store_id)]
+        C2["store_id: SMALLINT REFERENCES store(store_id)"]
         C3[first_name: VARCHAR(45) NOT NULL]
         C4[last_name: VARCHAR(45) NOT NULL]
         C5[email: VARCHAR(50)]
-        C6[address_id: SMALLINT REFERENCES address(address_id)]
+        C6["address_id: SMALLINT REFERENCES address(address_id)"]
         C7[activebool: BOOLEAN DEFAULT true]
         C8[create_date: DATE DEFAULT CURRENT_DATE]
         C9[last_update: TIMESTAMP DEFAULT CURRENT_TIMESTAMP]
@@ -749,7 +749,7 @@ graph TB
         F2[title: VARCHAR(255) NOT NULL]
         F3[description: TEXT]
         F4[release_year: INTEGER]
-        F5[language_id: SMALLINT REFERENCES language(language_id)]
+        F5["language_id: SMALLINT REFERENCES language(language_id)"]
         F6[rental_duration: SMALLINT DEFAULT 3]
         F7[rental_rate: NUMERIC(4,2) DEFAULT 4.99]
         F8[length: SMALLINT]
@@ -762,18 +762,18 @@ graph TB
     subgraph "租赁表 (Rental)"
         R1[rental_id: INTEGER PRIMARY KEY]
         R2[rental_date: TIMESTAMP NOT NULL]
-        R3[inventory_id: INTEGER REFERENCES inventory(inventory_id)]
-        R4[customer_id: SMALLINT REFERENCES customer(customer_id)]
+        R3["inventory_id: INTEGER REFERENCES inventory(inventory_id)"]
+        R4["customer_id: SMALLINT REFERENCES customer(customer_id)"]
         R5[return_date: TIMESTAMP]
-        R6[staff_id: SMALLINT REFERENCES staff(staff_id)]
+        R6["staff_id: SMALLINT REFERENCES staff(staff_id)"]
         R7[last_update: TIMESTAMP DEFAULT CURRENT_TIMESTAMP]
     end
     
     subgraph "支付表 (Payment)"
         P1[payment_id: INTEGER PRIMARY KEY]
-        P2[customer_id: SMALLINT REFERENCES customer(customer_id)]
-        P3[staff_id: SMALLINT REFERENCES staff(staff_id)]
-        P4[rental_id: INTEGER REFERENCES rental(rental_id)]
+        P2["customer_id: SMALLINT REFERENCES customer(customer_id)"]
+        P3["staff_id: SMALLINT REFERENCES staff(staff_id)"]
+        P4["rental_id: INTEGER REFERENCES rental(rental_id)"]
         P5[amount: NUMERIC(5,2) NOT NULL]
         P6[payment_date: TIMESTAMP NOT NULL]
     end
@@ -837,10 +837,10 @@ graph TB
     end
     
     subgraph "复合索引（多列组合）"
-        I13[film(rating, rental_rate)：复合查询<br/>评级和租金组合]
-        I14[actor(first_name, last_name)：姓名查询<br/>完整姓名搜索]
-        I15[rental(customer_id, rental_date)：客户租赁历史<br/>客户时间组合]
-        I16[payment(customer_id, payment_date)：客户支付历史<br/>客户支付时间]
+        I13["film(rating, rental_rate)：复合查询<br/>评级和租金组合"]
+        I14["actor(first_name, last_name)：姓名查询<br/>完整姓名搜索"]
+        I15["rental(customer_id, rental_date)：客户租赁历史<br/>客户时间组合"]
+        I16["payment(customer_id, payment_date)：客户支付历史<br/>客户支付时间"]
     end
 ```
 
@@ -864,7 +864,7 @@ graph TB
         F4[INDEX: rating (评级查询)]
         F5[INDEX: rental_rate (租金查询)]
         F6[INDEX: release_year (年份查询)]
-        F7[COMPOSITE: (rating, rental_rate)]
+        F7["COMPOSITE: (rating, rental_rate)"]
     end
     
     subgraph "租赁表索引"
@@ -874,8 +874,8 @@ graph TB
         R4[INDEX: staff_id (外键)]
         R5[INDEX: rental_date (日期查询)]
         R6[INDEX: return_date (归还查询)]
-        R7[COMPOSITE: (customer_id, rental_date)]
-        R8[COMPOSITE: (inventory_id, rental_date)]
+        R7["COMPOSITE: (customer_id, rental_date)"]
+        R8["COMPOSITE: (inventory_id, rental_date)"]
     end
     
     subgraph "支付表索引"
@@ -885,7 +885,7 @@ graph TB
         P4[INDEX: rental_id (外键)]
         P5[INDEX: payment_date (日期查询)]
         P6[INDEX: amount (金额查询)]
-        P7[COMPOSITE: (customer_id, payment_date)]
+        P7["COMPOSITE: (customer_id, payment_date)"]
     end
 ```
 
@@ -1049,7 +1049,7 @@ graph TB
     subgraph "实体完整性"
         E1[主键约束：NOT NULL + UNIQUE<br/>customer_id, film_id, rental_id等]
         E2[自增序列：SERIAL类型<br/>自动生成唯一标识]
-        E3[复合主键：多列组合<br/>film_actor(actor_id, film_id)]
+        E3["复合主键：多列组合<br/>film_actor(actor_id, film_id)"]
     end
     
     subgraph "参照完整性"
@@ -1061,8 +1061,8 @@ graph TB
     
     subgraph "域完整性"
         D1[数据类型约束<br/>INTEGER, VARCHAR, NUMERIC等]
-        D2[长度约束：VARCHAR(n)<br/>限制字符串长度]
-        D3[值域约束：CHECK约束<br/>rating IN ('G','PG','PG-13','R','NC-17')]
+        D2["长度约束：VARCHAR(n)<br/>限制字符串长度"]
+        D3["值域约束：CHECK约束<br/>rating IN ('G','PG','PG-13','R','NC-17')"]
         D4[非空约束：NOT NULL<br/>必填字段约束]
         D5[默认值约束：DEFAULT<br/>rental_duration DEFAULT 3]
     end
@@ -1081,8 +1081,8 @@ graph TB
 graph TB
     subgraph "客户表约束"
         C1[PRIMARY KEY: customer_id]
-        C2[FOREIGN KEY: store_id → store(store_id)]
-        C3[FOREIGN KEY: address_id → address(address_id)]
+        C2["FOREIGN KEY: store_id → store(store_id)"]
+        C3["FOREIGN KEY: address_id → address(address_id)"]
         C4[NOT NULL: first_name, last_name]
         C5[UNIQUE: email (可选)]
         C6[DEFAULT: activebool = true]
@@ -1092,7 +1092,7 @@ graph TB
     
     subgraph "电影表约束"
         F1[PRIMARY KEY: film_id]
-        F2[FOREIGN KEY: language_id → language(language_id)]
+        F2["FOREIGN KEY: language_id → language(language_id)"]
         F3[NOT NULL: title, rental_duration, rental_rate]
         F4[DEFAULT: rental_duration = 3]
         F5[DEFAULT: rental_rate = 4.99]
@@ -1104,9 +1104,9 @@ graph TB
     
     subgraph "租赁表约束"
         R1[PRIMARY KEY: rental_id]
-        R2[FOREIGN KEY: inventory_id → inventory(inventory_id)]
-        R3[FOREIGN KEY: customer_id → customer(customer_id)]
-        R4[FOREIGN KEY: staff_id → staff(staff_id)]
+        R2["FOREIGN KEY: inventory_id → inventory(inventory_id)"]
+        R3["FOREIGN KEY: customer_id → customer(customer_id)"]
+        R4["FOREIGN KEY: staff_id → staff(staff_id)"]
         R5[NOT NULL: rental_date]
         R6[CHECK: return_date >= rental_date]
         R7[UNIQUE: (inventory_id, rental_date)]
@@ -1114,9 +1114,9 @@ graph TB
     
     subgraph "支付表约束"
         P1[PRIMARY KEY: payment_id]
-        P2[FOREIGN KEY: customer_id → customer(customer_id)]
-        P3[FOREIGN KEY: staff_id → staff(staff_id)]
-        P4[FOREIGN KEY: rental_id → rental(rental_id)]
+        P2["FOREIGN KEY: customer_id → customer(customer_id)"]
+        P3["FOREIGN KEY: staff_id → staff(staff_id)"]
+        P4["FOREIGN KEY: rental_id → rental(rental_id)"]
         P5[NOT NULL: amount, payment_date]
         P6[CHECK: amount > 0]
     end
@@ -1131,7 +1131,7 @@ graph LR
         PK2[自动索引<br/>提高查询性能]
         PK3[引用完整性<br/>被外键引用]
         PK4[单列主键<br/>customer_id, film_id]
-        PK5[复合主键<br/>film_actor(actor_id, film_id)]
+        PK5["复合主键<br/>film_actor(actor_id, film_id)"]
     end
     
     subgraph "外键约束"
@@ -1143,7 +1143,7 @@ graph LR
     end
     
     subgraph "检查约束"
-        CK1[值域检查<br/>rating IN (...)]
+        CK1["值域检查<br/>rating IN (...)"]
         CK2[范围检查<br/>amount > 0]
         CK3[逻辑检查<br/>return_date >= rental_date]
         CK4[格式检查<br/>email格式验证]
@@ -1151,7 +1151,7 @@ graph LR
     
     subgraph "唯一约束"
         UQ1[单列唯一<br/>email UNIQUE]
-        UQ2[复合唯一<br/>UNIQUE(inventory_id, rental_date)]
+        UQ2["复合唯一<br/>UNIQUE(inventory_id, rental_date)"]
         UQ3[部分唯一<br/>UNIQUE WHERE active = true]
     end
 ```
@@ -1322,14 +1322,14 @@ graph TB
     subgraph "实际SQL中的数据类型"
         T1[SERIAL：所有主键使用SERIAL<br/>而非INTEGER]
         T2[YEAR：film.release_year使用YEAR类型<br/>而非INTEGER]
-        T3[CHARACTER：language.name使用CHARACTER(20)<br/>而非CHAR(20)]
+        T3["CHARACTER：language.name使用CHARACTER(20)<br/>而非CHAR(20)"]
         T4[TSVECTOR：film.fulltext使用TSVECTOR<br/>用于全文搜索]
         T5[TIMESTAMP：所有时间戳使用<br/>timestamp without time zone]
     end
     
     subgraph "默认值修正"
-        D1[now()：所有last_update字段<br/>默认值为now()]
-        D2[('now'::text)::date：create_date<br/>使用特殊日期转换]
+        D1["now()：所有last_update字段<br/>默认值为now()"]
+        D2["('now'::text)::date：create_date<br/>使用特殊日期转换"]
         D3[G：film.rating默认值为'G'<br/>而非NULL]
     end
 ```
@@ -1363,7 +1363,7 @@ graph TB
     subgraph "缺失的索引"
         M1[部分外键未创建索引<br/>如customer.store_id]
         M2[业务查询字段未创建索引<br/>如film.title, rental.rental_date]
-        M3[复合索引未创建<br/>如film(rating, rental_rate)]
+        M3["复合索引未创建<br/>如film(rating, rental_rate)"]
     end
 ```
 
@@ -1651,7 +1651,7 @@ graph TB
 ```mermaid
 graph LR
     subgraph "关系类型统计"
-        R1[一对一关系: 1个<br/>store ↔ staff(经理)]
+        R1["一对一关系: 1个<br/>store ↔ staff(经理)"]
         R2[一对多关系: 18个<br/>主要业务关系]
         R3[多对多关系: 2个<br/>film ↔ actor, film ↔ category]
     end
