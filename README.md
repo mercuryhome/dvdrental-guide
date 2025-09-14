@@ -16,7 +16,11 @@ cd dvdrental-guide
 ├── 数据库安装配置指南.md                 # 环境搭建指南
 ├── 实验练习答案.md                      # 练习答案参考
 ├── DVD租赁数据库详细结构说明.md          # 详细数据库结构说明
-├── DVD租赁数据库关系图.md               # 数据库关系图
+├── DVD租赁数据库设计过程.md              # 数据库设计过程文档
+├── DVD租赁数据库表结构详细表格.md         # 表结构详细表格文档
+├── dvdrental-ertool-export.sql         # ERD工具导出的SQL文件
+├── dvdrental-erdtool.png              # ERD工具导出的关系图
+└── 更新说明.md                        # 项目更新说明文档
 
 ```
 
@@ -47,7 +51,10 @@ cd dvdrental-guide
 
 ### 补充学习资源
 - 阅读 [DVD租赁数据库详细结构说明.md](./DVD租赁数据库详细结构说明.md) 了解完整的数据库结构
-- 查看 [DVD租赁数据库ER关系图.md](https://neon.com/_next/image?url=%2Fpostgresqltutorial%2Fdvd-rental-sample-database-diagram.png&w=640&q=75&dpl=dpl_EGWN7rHAPyoeARBxeB8mRi69u7b2) 理解表之间的关系
+- 学习 [DVD租赁数据库设计过程.md](./DVD租赁数据库设计过程.md) 掌握从业务需求到数据库实现的完整设计过程
+- 查看 [DVD租赁数据库表结构详细表格.md](./DVD租赁数据库表结构详细表格.md) 获取所有表的详细字段定义和约束信息
+- 查看 [DVD租赁数据库ER关系图](https://neon.com/_next/image?url=%2Fpostgresqltutorial%2Fdvd-rental-sample-database-diagram.png&w=640&q=75&dpl=dpl_EGWN7rHAPyoeARBxeB8mRi69u7b2) 理解表之间的关系
+- 参考 [更新说明.md](./更新说明.md) 了解项目的最新更新内容
 
 ## 主要特性
 
@@ -158,6 +165,19 @@ psql -U postgres -d dvdrental -c "SELECT COUNT(*) FROM film;"
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/postgresql)
 
 ## 更新日志
+
+### v1.2.0 (2024-12-XX)
+- 基于实际SQL文件更新了数据库设计过程文档
+- 创建了专门的表结构详细表格文档
+- 添加了ERD工具导出的SQL文件和关系图
+- 优化了文档结构，避免内容重复
+- 完善了数据类型、约束和索引的详细说明
+
+### v1.1.0 (2024-12-XX)
+- 创建了完整的数据库设计过程文档
+- 添加了从业务需求到数据库实现的完整流程
+- 包含了概念模型、ER模型、逻辑模型、物理模型设计
+- 提供了基于实际SQL文件的修正说明
 
 ### v1.0.0 (2024-01-XX)
 - 初始版本发布
