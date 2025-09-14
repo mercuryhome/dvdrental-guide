@@ -176,37 +176,37 @@ graph TB
 ```mermaid
 graph TB
     subgraph "客户实体 (Customer)"
-        C1[customer_id - 客户唯一标识]
-        C2[store_id - 所属店铺ID]
-        C3[first_name - 名字]
-        C4[last_name - 姓氏]
-        C5[email - 邮箱地址]
-        C6[address_id - 地址ID]
-        C7[activebool - 是否活跃]
-        C8[create_date - 创建日期]
-        C9[last_update - 最后更新时间]
-        C10[active - 活跃状态]
+        C1["customer_id: 客户唯一标识"]
+        C2["store_id: 所属店铺ID"]
+        C3["first_name: 名字"]
+        C4["last_name: 姓氏"]
+        C5["email: 邮箱地址"]
+        C6["address_id: 地址ID"]
+        C7["activebool: 是否活跃"]
+        C8["create_date: 创建日期"]
+        C9["last_update: 最后更新时间"]
+        C10["active: 活跃状态"]
     end
     
     subgraph "员工实体 (Staff)"
-        S1[staff_id - 员工唯一标识]
-        S2[first_name - 名字]
-        S3[last_name - 姓氏]
-        S4[address_id - 地址ID]
-        S5[email - 邮箱地址]
-        S6[store_id - 所属店铺ID]
-        S7[active - 是否活跃]
-        S8[username - 用户名]
-        S9[password - 密码]
-        S10[last_update - 最后更新时间]
-        S11[picture - 头像图片]
+        S1["staff_id: 员工唯一标识"]
+        S2["first_name: 名字"]
+        S3["last_name: 姓氏"]
+        S4["address_id: 地址ID"]
+        S5["email: 邮箱地址"]
+        S6["store_id: 所属店铺ID"]
+        S7["active: 是否活跃"]
+        S8["username: 用户名"]
+        S9["password: 密码"]
+        S10["last_update: 最后更新时间"]
+        S11["picture: 头像图片"]
     end
     
     subgraph "演员实体 (Actor)"
-        A1[actor_id - 演员唯一标识]
-        A2[first_name - 名字]
-        A3[last_name - 姓氏]
-        A4[last_update - 最后更新时间]
+        A1["actor_id: 演员唯一标识"]
+        A2["first_name: 名字"]
+        A3["last_name: 姓氏"]
+        A4["last_update: 最后更新时间"]
     end
 ```
 
@@ -215,30 +215,30 @@ graph TB
 ```mermaid
 graph TB
     subgraph "电影实体 (Film)"
-        F1[film_id - 电影唯一标识]
-        F2[title - 电影标题]
-        F3[description - 电影描述]
-        F4[release_year - 发行年份]
-        F5[language_id - 语言ID]
-        F6[rental_duration - 租赁时长]
-        F7[rental_rate - 租赁费率]
-        F8[length - 电影时长]
-        F9[replacement_cost - 替换成本]
-        F10[rating - 电影评级]
-        F11[special_features - 特殊功能]
-        F12[last_update - 最后更新时间]
+        F1["film_id: 电影唯一标识"]
+        F2["title: 电影标题"]
+        F3["description: 电影描述"]
+        F4["release_year: 发行年份"]
+        F5["language_id: 语言ID"]
+        F6["rental_duration: 租赁时长"]
+        F7["rental_rate: 租赁费率"]
+        F8["length: 电影时长"]
+        F9["replacement_cost: 替换成本"]
+        F10["rating: 电影评级"]
+        F11["special_features: 特殊功能"]
+        F12["last_update: 最后更新时间"]
     end
     
     subgraph "分类实体 (Category)"
-        CAT1[category_id - 分类唯一标识]
-        CAT2[name - 分类名称]
-        CAT3[last_update - 最后更新时间]
+        CAT1["category_id: 分类唯一标识"]
+        CAT2["name: 分类名称"]
+        CAT3["last_update: 最后更新时间"]
     end
     
     subgraph "语言实体 (Language)"
-        L1[language_id - 语言唯一标识]
-        L2[name - 语言名称]
-        L3[last_update - 最后更新时间]
+        L1["language_id: 语言唯一标识"]
+        L2["name: 语言名称"]
+        L3["last_update: 最后更新时间"]
     end
 ```
 
@@ -247,36 +247,36 @@ graph TB
 ```mermaid
 graph TB
     subgraph "店铺实体 (Store)"
-        ST1[store_id - 店铺唯一标识]
-        ST2[manager_staff_id - 经理员工ID]
-        ST3[address_id - 地址ID]
-        ST4[last_update - 最后更新时间]
+        ST1["store_id: 店铺唯一标识"]
+        ST2["manager_staff_id: 经理员工ID"]
+        ST3["address_id: 地址ID"]
+        ST4["last_update: 最后更新时间"]
     end
     
     subgraph "库存实体 (Inventory)"
-        I1[inventory_id - 库存唯一标识]
-        I2[film_id - 电影ID]
-        I3[store_id - 店铺ID]
-        I4[last_update - 最后更新时间]
+        I1["inventory_id: 库存唯一标识"]
+        I2["film_id: 电影ID"]
+        I3["store_id: 店铺ID"]
+        I4["last_update: 最后更新时间"]
     end
     
     subgraph "租赁实体 (Rental)"
-        R1[rental_id - 租赁唯一标识]
-        R2[rental_date - 租赁日期]
-        R3[inventory_id - 库存ID]
-        R4[customer_id - 客户ID]
-        R5[return_date - 归还日期]
-        R6[staff_id - 员工ID]
-        R7[last_update - 最后更新时间]
+        R1["rental_id: 租赁唯一标识"]
+        R2["rental_date: 租赁日期"]
+        R3["inventory_id: 库存ID"]
+        R4["customer_id: 客户ID"]
+        R5["return_date: 归还日期"]
+        R6["staff_id: 员工ID"]
+        R7["last_update: 最后更新时间"]
     end
     
     subgraph "支付实体 (Payment)"
-        P1[payment_id - 支付唯一标识]
-        P2[customer_id - 客户ID]
-        P3[staff_id - 员工ID]
-        P4[rental_id - 租赁ID]
-        P5[amount - 支付金额]
-        P6[payment_date - 支付日期]
+        P1["payment_id: 支付唯一标识"]
+        P2["customer_id: 客户ID"]
+        P3["staff_id: 员工ID"]
+        P4["rental_id: 租赁ID"]
+        P5["amount: 支付金额"]
+        P6["payment_date: 支付日期"]
     end
 ```
 
@@ -285,27 +285,27 @@ graph TB
 ```mermaid
 graph TB
     subgraph "地址实体 (Address)"
-        AD1[address_id - 地址唯一标识]
-        AD2[address - 街道地址]
-        AD3[address2 - 详细地址]
-        AD4[district - 区域]
-        AD5[city_id - 城市ID]
-        AD6[postal_code - 邮政编码]
-        AD7[phone - 电话号码]
-        AD8[last_update - 最后更新时间]
+        AD1["address_id: 地址唯一标识"]
+        AD2["address: 街道地址"]
+        AD3["address2: 详细地址"]
+        AD4["district: 区域"]
+        AD5["city_id: 城市ID"]
+        AD6["postal_code: 邮政编码"]
+        AD7["phone: 电话号码"]
+        AD8["last_update: 最后更新时间"]
     end
     
     subgraph "城市实体 (City)"
-        CI1[city_id - 城市唯一标识]
-        CI2[city - 城市名称]
-        CI3[country_id - 国家ID]
-        CI4[last_update - 最后更新时间]
+        CI1["city_id: 城市唯一标识"]
+        CI2["city: 城市名称"]
+        CI3["country_id: 国家ID"]
+        CI4["last_update: 最后更新时间"]
     end
     
     subgraph "国家实体 (Country)"
-        CO1[country_id - 国家唯一标识]
-        CO2[country - 国家名称]
-        CO3[last_update - 最后更新时间]
+        CO1["country_id: 国家唯一标识"]
+        CO2["country: 国家名称"]
+        CO3["last_update: 最后更新时间"]
     end
 ```
 
@@ -314,15 +314,15 @@ graph TB
 ```mermaid
 graph TB
     subgraph "电影演员关联表 (Film_Actor)"
-        FA1[actor_id - 演员ID]
-        FA2[film_id - 电影ID]
-        FA3[last_update - 最后更新时间]
+        FA1["actor_id: 演员ID"]
+        FA2["film_id: 电影ID"]
+        FA3["last_update: 最后更新时间"]
     end
     
     subgraph "电影分类关联表 (Film_Category)"
-        FC1[film_id - 电影ID]
-        FC2[category_id - 分类ID]
-        FC3[last_update - 最后更新时间]
+        FC1["film_id: 电影ID"]
+        FC2["category_id: 分类ID"]
+        FC3["last_update: 最后更新时间"]
     end
 ```
 
@@ -734,9 +734,9 @@ graph TB
     subgraph "客户表 (Customer)"
         C1[customer_id: INTEGER PRIMARY KEY]
         C2["store_id: SMALLINT REFERENCES store(store_id)"]
-        C3[first_name: VARCHAR(45) NOT NULL]
-        C4[last_name: VARCHAR(45) NOT NULL]
-        C5[email: VARCHAR(50)]
+        C3["first_name: VARCHAR(45) NOT NULL"]
+        C4["last_name: VARCHAR(45) NOT NULL"]
+        C5["email: VARCHAR(50)"]
         C6["address_id: SMALLINT REFERENCES address(address_id)"]
         C7[activebool: BOOLEAN DEFAULT true]
         C8[create_date: DATE DEFAULT CURRENT_DATE]
@@ -746,14 +746,14 @@ graph TB
     
     subgraph "电影表 (Film)"
         F1[film_id: INTEGER PRIMARY KEY]
-        F2[title: VARCHAR(255) NOT NULL]
+        F2["title: VARCHAR(255) NOT NULL"]
         F3[description: TEXT]
         F4[release_year: INTEGER]
         F5["language_id: SMALLINT REFERENCES language(language_id)"]
         F6[rental_duration: SMALLINT DEFAULT 3]
-        F7[rental_rate: NUMERIC(4,2) DEFAULT 4.99]
+        F7["rental_rate: NUMERIC(4,2) DEFAULT 4.99"]
         F8[length: SMALLINT]
-        F9[replacement_cost: NUMERIC(5,2) DEFAULT 19.99]
+        F9["replacement_cost: NUMERIC(5,2) DEFAULT 19.99"]
         F10[rating: MPAA_RATING]
         F11[special_features: TEXT[]]
         F12[last_update: TIMESTAMP DEFAULT CURRENT_TIMESTAMP]
@@ -774,7 +774,7 @@ graph TB
         P2["customer_id: SMALLINT REFERENCES customer(customer_id)"]
         P3["staff_id: SMALLINT REFERENCES staff(staff_id)"]
         P4["rental_id: INTEGER REFERENCES rental(rental_id)"]
-        P5[amount: NUMERIC(5,2) NOT NULL]
+        P5["amount: NUMERIC(5,2) NOT NULL"]
         P6[payment_date: TIMESTAMP NOT NULL]
     end
 ```
@@ -828,12 +828,12 @@ graph TB
     end
     
     subgraph "业务查询索引（自定义）"
-        I7[film.title：电影标题查询<br/>VARCHAR(255)]
+        I7["film.title：电影标题查询<br/>VARCHAR(255)"]
         I8[rental.rental_date：租赁日期查询<br/>TIMESTAMP]
-        I9[customer.email：客户邮箱查询<br/>VARCHAR(50)]
-        I10[payment.amount：支付金额查询<br/>NUMERIC(5,2)]
+        I9["customer.email：客户邮箱查询<br/>VARCHAR(50)"]
+        I10["payment.amount：支付金额查询<br/>NUMERIC(5,2)"]
         I11[film.rating：电影评级查询<br/>MPAA_RATING]
-        I12[actor.first_name：演员姓名查询<br/>VARCHAR(45)]
+        I12["actor.first_name：演员姓名查询<br/>VARCHAR(45)"]
     end
     
     subgraph "复合索引（多列组合）"
@@ -850,41 +850,41 @@ graph TB
 graph TB
     subgraph "客户表索引"
         C1[PRIMARY KEY: customer_id]
-        C2[INDEX: store_id (外键)]
-        C3[INDEX: address_id (外键)]
-        C4[INDEX: email (业务查询)]
-        C5[INDEX: last_name (姓名查询)]
-        C6[INDEX: activebool (状态查询)]
+        C2["INDEX: store_id (外键)"]
+        C3["INDEX: address_id (外键)"]
+        C4["INDEX: email (业务查询)"]
+        C5["INDEX: last_name (姓名查询)"]
+        C6["INDEX: activebool (状态查询)"]
     end
     
     subgraph "电影表索引"
         F1[PRIMARY KEY: film_id]
-        F2[INDEX: language_id (外键)]
-        F3[INDEX: title (标题查询)]
-        F4[INDEX: rating (评级查询)]
-        F5[INDEX: rental_rate (租金查询)]
-        F6[INDEX: release_year (年份查询)]
+        F2["INDEX: language_id (外键)"]
+        F3["INDEX: title (标题查询)"]
+        F4["INDEX: rating (评级查询)"]
+        F5["INDEX: rental_rate (租金查询)"]
+        F6["INDEX: release_year (年份查询)"]
         F7["COMPOSITE: (rating, rental_rate)"]
     end
     
     subgraph "租赁表索引"
         R1[PRIMARY KEY: rental_id]
-        R2[INDEX: inventory_id (外键)]
-        R3[INDEX: customer_id (外键)]
-        R4[INDEX: staff_id (外键)]
-        R5[INDEX: rental_date (日期查询)]
-        R6[INDEX: return_date (归还查询)]
+        R2["INDEX: inventory_id (外键)"]
+        R3["INDEX: customer_id (外键)"]
+        R4["INDEX: staff_id (外键)"]
+        R5["INDEX: rental_date (日期查询)"]
+        R6["INDEX: return_date (归还查询)"]
         R7["COMPOSITE: (customer_id, rental_date)"]
         R8["COMPOSITE: (inventory_id, rental_date)"]
     end
     
     subgraph "支付表索引"
         P1[PRIMARY KEY: payment_id]
-        P2[INDEX: customer_id (外键)]
-        P3[INDEX: staff_id (外键)]
-        P4[INDEX: rental_id (外键)]
-        P5[INDEX: payment_date (日期查询)]
-        P6[INDEX: amount (金额查询)]
+        P2["INDEX: customer_id (外键)"]
+        P3["INDEX: staff_id (外键)"]
+        P4["INDEX: rental_id (外键)"]
+        P5["INDEX: payment_date (日期查询)"]
+        P6["INDEX: amount (金额查询)"]
         P7["COMPOSITE: (customer_id, payment_date)"]
     end
 ```
@@ -1084,10 +1084,10 @@ graph TB
         C2["FOREIGN KEY: store_id → store(store_id)"]
         C3["FOREIGN KEY: address_id → address(address_id)"]
         C4[NOT NULL: first_name, last_name]
-        C5[UNIQUE: email (可选)]
+        C5["UNIQUE: email (可选)"]
         C6[DEFAULT: activebool = true]
         C7[DEFAULT: create_date = CURRENT_DATE]
-        C8[CHECK: active IN (0,1)]
+        C8["CHECK: active IN (0,1)"]
     end
     
     subgraph "电影表约束"
@@ -1097,7 +1097,7 @@ graph TB
         F4[DEFAULT: rental_duration = 3]
         F5[DEFAULT: rental_rate = 4.99]
         F6[DEFAULT: replacement_cost = 19.99]
-        F7[CHECK: rating IN ('G','PG','PG-13','R','NC-17')]
+        F7["CHECK: rating IN ('G','PG','PG-13','R','NC-17')"]
         F8[CHECK: rental_rate > 0]
         F9[CHECK: length > 0]
     end
@@ -1109,7 +1109,7 @@ graph TB
         R4["FOREIGN KEY: staff_id → staff(staff_id)"]
         R5[NOT NULL: rental_date]
         R6[CHECK: return_date >= rental_date]
-        R7[UNIQUE: (inventory_id, rental_date)]
+        R7["UNIQUE: (inventory_id, rental_date)"]
     end
     
     subgraph "支付表约束"
